@@ -1,0 +1,27 @@
+client = Twitter::REST::Client.new do |config|
+  config.consumer_key        = "AcDdxJser1b9PZKXO4nkmdAeT"
+  config.consumer_secret     = "spDfoQ40iwcPWJbcy6TzXy0boYTLuuiwqWJ8MowQmKIzsRFg7s"
+  config.access_token        = "929731111697104896-dD3YwJsgkfSuHGkQ4i5ZABqIAhuu89z"
+  config.access_token_secret = "vIy4z6c3YrMtJD9PlEBZJoBS9wkNtsbjnhOR4VHBkhXtO"
+end
+
+tweets = client.user_timeline('cricket', count: 20)
+tweets.each { |tweet| puts tweet.full_text }
+
+client = Twitter::Streaming::Client.new do |config|
+  config.consumer_key        = "AcDdxJser1b9PZKXO4nkmdAeT"
+  config.consumer_secret     = "spDfoQ40iwcPWJbcy6TzXy0boYTLuuiwqWJ8MowQmKIzsRFg7s"
+  config.access_token        = "929731111697104896"
+  config.access_token_secret = "vIy4z6c3YrMtJD9PlEBZJoBS9wkNtsbjnhOR4VHBkhXtO"
+end
+
+client.user_timeline(cricket, :count => 200).each do |tweet| 
+  file.puts tweet.text
+  end
+
+
+Consumer Key (API Key)	AcDdxJser1b9PZKXO4nkmdAeT
+Consumer Secret (API Secret)	spDfoQ40iwcPWJbcy6TzXy0boYTLuuiwqWJ8MowQmKIzsRFg7s
+Access Level	Read and write (modify app permissions)
+Owner	vktvkt1993
+Owner ID	929731111697104896
