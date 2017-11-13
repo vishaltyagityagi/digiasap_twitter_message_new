@@ -13,11 +13,12 @@ class GamesController < ApplicationController
 
 	def get_twittes
 		@client ||= Twitter::REST::Client.new do |config|
-		config.consumer_key        = "AcDdxJser1b9PZKXO4nkmdAeT"
-		config.consumer_secret     = "spDfoQ40iwcPWJbcy6TzXy0boYTLuuiwqWJ8MowQmKIzsRFg7s"
+		config.consumer_key        = "use your key"
+		config.consumer_secret     = "use"
 		config.access_token        = "929731111697104896-dD3YwJsgkfSuHGkQ4i5ZABqIAhuu89z"
 		config.access_token_secret = "vIy4z6c3YrMtJD9PlEBZJoBS9wkNtsbjnhOR4VHBkhXtO"
 		end
+
 		tweets = @client.user_timeline('cricket', count: 200)
 		tweets.each do |t|
 			Tweet.create(message: t.full_text) 
