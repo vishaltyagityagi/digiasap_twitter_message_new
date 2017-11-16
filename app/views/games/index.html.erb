@@ -1,9 +1,10 @@
 
+<b><%= link_to "Get twittes of Cricket", get_twittes_path %></b>
+<b><%= link_to "Get all twittes of sachin", get_all_tweets_path %></b>
+
 	<% @tweets.each_with_index do |tweet,i| %>
 		Tweet =  <b><%= i %></b>
 
 		Tweet =  <b><%= tweet.try(:message) %></b><br>
 	<% end %>
 
-
-<b><%= link_to "Get twittes of Cricket", get_twittes_path %></b>
